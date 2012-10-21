@@ -55,3 +55,4 @@ module PaginatingFast
 end
 
 ActiveRecord::Base.send(:include, PaginatingFast)
+ActionView::Base.send(:include, PaginatingFast::Helpers)
