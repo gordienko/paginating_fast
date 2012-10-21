@@ -1,0 +1,26 @@
+PaginatingFast
+==============
+
+Introduction goes here.
+
+
+Example
+=======
+
+Gemfile:
+
+    gem 'paginating_fast'
+
+
+Use a paginate finder in the controller:
+
+  @posts = Post.order('updated_at DESC').paginate_fast(:size=>10, :current=>params[:page])
+
+
+Render the posts in your view like you would normally do. When you need to render
+pagination, just stick this in:
+
+  <%= paginating_links @posts, :params=>params if @posts.last_page > 1  %>
+
+
+Copyright (c) 2010 [name of plugin creator], released under the MIT license
