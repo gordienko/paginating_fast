@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+require 'active_record'
 require 'paging_helper'
 
 # PaginatingFast
@@ -52,3 +53,5 @@ module PaginatingFast
   end
   
 end
+
+ActiveRecord::Base.send(:include, PaginatingFast)
